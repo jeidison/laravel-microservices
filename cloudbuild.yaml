@@ -22,3 +22,11 @@ steps:
   - id: "Rodando o key:generate"
     name: 'docker'
     args: ['exec','-t','micro-videos-app','php','/var/www/artisan', 'key:generate']
+
+  - id: "Rodando migrations"
+    name: 'docker'
+    args: ['exec','-t','micro-videos-app','php','/var/www/artisan', 'migrate']
+
+  - id: "Rodando phpunit"
+    name: 'docker'
+    args: ['exec','-t','micro-videos-app','php','/var/www/vendor/bin/phpunit', '-c', '/var/www/phpunit.xml']
