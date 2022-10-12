@@ -17,7 +17,7 @@ steps:
 
   - id: "Copiando .env"
     name: 'docker'
-    args: ['exec','-t','micro-videos-app','cp','.env.exemple', '.env']
+    args: ['exec','-t','micro-videos-app','cp','.env.example', '.env']
 
   - id: "Rodando o key:generate"
     name: 'docker'
