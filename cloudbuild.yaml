@@ -15,10 +15,6 @@ steps:
     name: 'docker'
     args: ['exec','-t','micro-videos-app','composer','install']
 
-  - id: "Copiando .env"
-    name: 'docker'
-    args: ['exec','-t','micro-videos-app','cp','.env.exemple', '.env']
-
   - id: "Rodando o key:generate"
     name: 'docker'
     args: ['exec','-t','micro-videos-app','php','/var/www/artisan', 'key:generate']
