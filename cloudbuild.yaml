@@ -14,3 +14,7 @@ steps:
   - id: "Rodando composer"
     name: 'docker'
     args: ['exec','-t','micro-videos-app','composer','install']
+
+  - id: "Copiando .env"
+    name: 'docker'
+    args: ['exec','-t','micro-videos-app','cp','.env.exemple', '.env']
