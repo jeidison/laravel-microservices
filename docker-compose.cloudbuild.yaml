@@ -6,11 +6,11 @@ services:
         build: .
         container_name: micro-videos-app
 #        entrypoint: dockerize -template ./.docker/app/.env:.env -wait tcp://db:3306 -timeout 40s ./.docker/entrypoint.sh
-#        environment:
-#            - _DB_HOST=db
-#            - _DB_DATABASE=code_micro_videos
-#            - _DB_USERNAME=root
-#            - _DB_PASSWORD=root
+        environment:
+          - _DB_HOST=db
+          - _DB_DATABASE=code_micro_videos
+          - _DB_USERNAME=root
+          - _DB_PASSWORD=root
         volumes:
             - .:/var/www
         networks:
@@ -43,8 +43,9 @@ services:
         volumes:
             - ./.docker/dbdata:/var/lib/mysql
         environment:
-            - MYSQL_DATABASE=laravel
-            - MYSQL_ROOT_PASSWORD=
+            - MYSQL_DATABASE=code_micro_videos
+            - MYSQL_USER=root
+            - MYSQL_ROOT_PASSWORD=root
         networks:
             - app-network
 
